@@ -33,6 +33,11 @@ article pre {
   font-family: inherit;
   font-size: larger;
 }
+@media only screen and (max-width:767px) {
+  article pre {
+    font-size: medium;
+  }
+}
 
 button.modify-comment, button.delete-comment, button.validate-comment, button.cancel-comment {
   bottom: -25px;
@@ -42,4 +47,13 @@ button.modify-comment, button.validate-comment {
 }
 button.delete-comment, button.cancel-comment {
   right: 20px;
+}
+
+.navbar-toggle-icon {
+  width: 60%;
+  height: 60%;
+}
+.navbar-toggler {
+  width: 88px;
+  height: 88px;
 }

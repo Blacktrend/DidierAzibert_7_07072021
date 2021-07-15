@@ -73,7 +73,7 @@ async function displayPost(post, author, postUserId){
             </figure>
             <div class="date bg-secondary text-white rounded px-2 d-inline-block">${date}</div>
             <h1 class="my-2">${post.result.title}</h1>
-            <pre class="bg-light p-5">${post.result.content}</pre>
+            <pre class="bg-light p-1 p-lg-5">${post.result.content}</pre>
             <a class="fst-italic fs-5" href="profile.html?userId=${author.userId}">Article publié par&nbsp: ${author.firstName} ${author.lastName}</a>`
 }
 
@@ -120,7 +120,7 @@ async function displayComments(comments, user, moderator, token) {
         const author = await getCommentAuthor(user_id, token);
 
         const content = document.createElement("div");
-        content.classList.add("my-1");
+        content.classList.add("my-4");
         const datetime = new Date(comment.updatedAt);
         const date = datetime.toLocaleDateString('fr-FR');
 
@@ -145,6 +145,7 @@ async function displayComments(comments, user, moderator, token) {
 
 async function createComment(event, userId, token, postId) {
     event.preventDefault();
+    const comments = document.getElementById("comments");
     const comment = {
         content: document.getElementById("content").value,
         user_id: userId,
@@ -163,8 +164,21 @@ async function createComment(event, userId, token, postId) {
             body: commentJson
         });
 
-        if(response.ok) { alert("Commentaire publié !"); }
-        return response.ok ? response.json() : alert("Erreur HTTP " + response.status);
+        if(response.ok) {
+            alert("Commentaire publié !");
+
+            // to be reviewed to respect the DRY**********************
+            const content = document.createElement("div");
+            content.classList.add("my-4");
+            const datetime = new Date();
+            const date = datetime.toLocaleDateString('fr-FR');
+            const author = await getCommentAuthor(userId, token);
+
+            content.innerHTML = `<a href="profile.html?userId=userId">${author.firstName} ${author.lastName} a écrit le ${date}&nbsp:</a>
+            <textarea class="form-control pr-5 py-3" rows="5" cols="80" readonly>${comment.content}</textarea>`;
+            comments.prepend(content);
+        }
+        else { alert("Erreur HTTP " + response.status); }
     }
     catch (err) { alert(err); }
 }

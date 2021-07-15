@@ -20,7 +20,7 @@
     </div>
     <div class="row">
         <nav class="col-8 navbar navbar-expand-md navbar-light bg-white mt-4 py-2 w-100" aria-label="main">
-            <button class="navbar-toggler border-0 pb-2 pt-0" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler border-0 pb-2 pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarContent">
@@ -59,8 +59,8 @@
                         <input class="form-control pr-5" name="loginEmail" type="email" id="loginEmail" required maxlength="50" minlength="6" pattern="[\w+]+[.-]?[\w+]+@[\w-]+(\.\w{2,6}){1,2}"/>
                         <span class="small">minimum 6 caractères</span>
                         <label for="loginPassword" class="d-block mb-0 mt-2">Mot de passe&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
-                        <input class="form-control pr-5" name="loginPassword" type="password" id="loginPassword" required maxlength="15" minlength="6"/>
-                        <span class="small">entre 6 et 15 caractères</span>
+                        <input class="form-control pr-5" name="loginPassword" type="password" id="loginPassword" required maxlength="20" minlength="6"/>
+                        <span class="small">entre 10 et 20 caractères, un chiffre, une lettre majuscule et une minuscule</span>
                         <p class="text-danger font-italic pl-3 mt-2"><span class="font-weight-bold">*</span>Obligatoire</p>
                     </fieldset>
                 </div>
@@ -90,8 +90,8 @@
                         <input class="form-control pr-5" name="email" type="email" id="email" required maxlength="50" minlength="6" pattern="[\w+]+[.-]?[\w+]+@[\w-]+(\.\w{2,6}){1,2}"/>
                         <span class="small">minimum 6 caractères</span>
                         <label for="password" class="d-block mb-0 mt-2">Mot de passe&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
-                        <input class="form-control pr-5" name="password" type="password" id="password" required maxlength="15" minlength="6"/>
-                        <span class="small">entre 6 et 15 caractères</span>
+                        <input class="form-control pr-5" name="password" type="password" id="password" required title="10 à 20 car., un chiffre, une lettre majuscule et une minuscule au moins" maxlength="20" minlength="10" pattern="^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{9,19})\S"/>
+                        <span class="small">entre 10 et 20 car., un chiffre, une lettre majuscule et une minuscule au moins</span>
                     </fieldset>
                     <p class="text-danger font-italic pl-3 mt-2"><span class="font-weight-bold">*</span>Obligatoire</p>
                 </div>

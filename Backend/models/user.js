@@ -17,26 +17,35 @@ const User = sequelize.define("User", {
     lastName: {
         type: DataTypes.STRING(50),
         allowNull: false,
-        notEmpty: true
+        validate : {
+            notEmpty: true
+        }
     },
     email: {
         unique: true,
         type: DataTypes.STRING(50),
         allowNull: false,
-        notEmpty: true,
-        isEmail: true,
-        len: [6,50]
+        validate : {
+            notEmpty: true,
+            isEmail: true,
+            len: [6,150]
+        }
     },
     password: {
         type: DataTypes.STRING(100),
         allowNull: false,
-        notEmpty: true,
-        len: [6,15]
+        validate : {
+            is: /^((?=\S*?[A-Z])(?=\S*?[a-z])(?=\S*?[0-9]).{9,150})\S$/, // until 150 car. as it's hashed
+            notEmpty: true,
+            len: [10, 150]
+        }
     },
     job: {
         type: DataTypes.STRING(50),
         allowNull: false,
-        notEmpty: true
+        /*validate : {
+            notEmpty: true
+        }*/
     },
     moderator: {
         type: DataTypes.BOOLEAN,

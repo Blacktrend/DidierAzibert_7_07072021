@@ -165,8 +165,11 @@ async function createPost(event, userId, token, formData) {
             body: formData
         });
 
-        if(response.ok) { alert("Article publié !"); }
-        return response.ok ? response.json() : alert("Erreur HTTP " + response.status);
+        if(response.ok) {
+            alert("Article publié !");
+            document.location.href = "posts.html";
+        }
+        else { alert("Erreur HTTP " + response.status); }
     }
     catch (err) { alert(err); }
 }
@@ -199,8 +202,11 @@ async function modifyPost(event, userId, token, postId, formData) {
                 body: formData
             });
 
-            if(response.ok) { alert("Article modifié !"); }
-            return response.ok ? response.json() : alert("Erreur HTTP " + response.status);
+            if(response.ok) {
+                alert("Article modifié !");
+                document.location.href = "posts.html";
+            }
+            else { alert("Erreur HTTP " + response.status); }
         }
         catch (err) { alert(err);}
     }

@@ -13,8 +13,9 @@ const Post = sequelize.define('Post', {
     imageUrl: {
         type: DataTypes.STRING,
         allowNull: false,
-        isUrl: true,
-        notContains: ["<script>", "*"]
+        validate : {
+            notEmpty: true
+        }
     },
     caption: {
         type: DataTypes.TEXT,
