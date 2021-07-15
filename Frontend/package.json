@@ -1,0 +1,27 @@
+{
+  "name": "groupomania-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./scss/main.scss:./docs/css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blacktrend/DidierAzibert_7_07072021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blacktrend/DidierAzibert_7_07072021/issues"
+  },
+  "homepage": "https://github.com/Blacktrend/DidierAzibert_7_07072021#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.2",
+    "bootstrap-icons": "^1.5.0"
+  }
+}

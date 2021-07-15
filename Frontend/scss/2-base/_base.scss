@@ -1,0 +1,45 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+}
+
+header .nav-link {
+  color: $primary !important;
+  font-weight: 600;
+}
+footer .nav-link {
+  color: #ffffff !important;
+}
+
+input:focus:invalid {
+  border: 2px solid $red;
+};
+
+form label {
+  text-indent: 5px;
+};
+
+.date {
+  top: -12px;
+  right: -8px;
+  font-weight: 500;
+}
+
+article pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: larger;
+}
+
+button.modify-comment, button.delete-comment, button.validate-comment, button.cancel-comment {
+  bottom: -25px;
+}
+button.modify-comment, button.validate-comment {
+  right: 130px;
+}
+button.delete-comment, button.cancel-comment {
+  right: 20px;
+}

@@ -1,0 +1,4 @@
+.idea
+.dcignore
+.env
+node_modules

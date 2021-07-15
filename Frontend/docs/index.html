@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Connexion au forum Groupomania</title>
+    <meta name="description" content="Connectez-vous ou créez un compte">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.jpg">
+    <script type="module" src="js/index.js" async></script>
+</head>
+<body class="d-flex flex-column">
+<header id="top" class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col text-center">
+            <a class=" navbar-brand" href="index.html">
+                <img src="img/logo-Groupomania.svg" class="mw-100 h-auto mt-2" alt="Logo Groupomania" title="Logo Groupomania" width="510" height="95"/>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <nav class="col-8 navbar navbar-expand-md navbar-light bg-white mt-4 py-2 w-100" aria-label="main">
+            <button class="navbar-toggler border-0 pb-2 pt-0" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:moderateur@groupomania.com">
+                            Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Charte du forum
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Cgu
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="container-xl pt-5">
+        <h1 class="mb-4 text-center">Accès au forum de l'entreprise</h1>
+        <div id="login-container" class="row justify-content-center">
+            <div class="dropdown-divider border-secondary"></div>
+            <h2 class="text-center mt-5">Se connecter</h2>
+            <form name="login" id="login" method="post" class="my-5">
+                <div class="row">
+                    <fieldset class="form-group col-6 mx-auto">
+                        <label for="loginEmail" class="d-block mb-0 mt-2">E-mail&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="loginEmail" type="email" id="loginEmail" required maxlength="50" minlength="6" pattern="[\w+]+[.-]?[\w+]+@[\w-]+(\.\w{2,6}){1,2}"/>
+                        <span class="small">minimum 6 caractères</span>
+                        <label for="loginPassword" class="d-block mb-0 mt-2">Mot de passe&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="loginPassword" type="password" id="loginPassword" required maxlength="15" minlength="6"/>
+                        <span class="small">entre 6 et 15 caractères</span>
+                        <p class="text-danger font-italic pl-3 mt-2"><span class="font-weight-bold">*</span>Obligatoire</p>
+                    </fieldset>
+                </div>
+                <div class="row justify-content-center mt-5">
+                    <button  id="login-user" class="btn btn-primary px-5 py-3 text-uppercase font-weight-bold w-auto" type="submit" form="login" name="Connexion" value="Connexion">Connexion</button>
+                </div>
+            </form>
+        </div>
+        <div id="signup-container" class="row justify-content-center">
+            <div class="dropdown-divider border-secondary"></div>
+            <h2 class="text-center mt-5">Créer un compte</h2>
+            <form name="signup" id="signup" method="post" class="my-5">
+                <div class="row">
+                    <fieldset class="form-group col-sm-6">
+                        <label for="firstName" class="d-block mb-0 mt-2">Prénom&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="firstName" type="text" id="firstName" required maxlength="50"
+                               pattern="((?!\u00d7|\u00f7)[A-Za-z\u00c0-\u00ff\u0152\u0153])\1?(?!\1)(?:[-'\s]?((?!\u00d7|\u00f7)[A-Za-z\u00c0-\u00ff\u0152\u0153])\2?(?!\2))*"/>
+                        <label for="lastName" class="d-block mb-0 mt-2">Nom&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="lastName" type="text" id="lastName" required maxlength="50"
+                               pattern="((?!\u00d7|\u00f7)[A-Za-z\u00c0-\u00ff\u0152\u0153])\1?(?!\1)(?:[-'\s]?((?!\u00d7|\u00f7)[A-Za-z\u00c0-\u00ff\u0152\u0153])\2?(?!\2))*"/>
+                        <label for="job" class="d-block mb-0 mt-2">Fonction&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="job" type="text" id="job" required maxlength="50" pattern="((?!\u00d7|\u00f7)[A-Za-z\u00c0-\u00ff\u0152\u0153])\1?(?!\1)(?:[-'\s]?((?!\u00d7|\u00f7)[A-Za-z\u00c0-\u00ff\u0152\u0153])\2?(?!\2))*"/>
+                    </fieldset>
+
+                    <fieldset class="form-group col-sm-6">
+                        <label for="email" class="d-block mb-0 mt-2">E-mail&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="email" type="email" id="email" required maxlength="50" minlength="6" pattern="[\w+]+[.-]?[\w+]+@[\w-]+(\.\w{2,6}){1,2}"/>
+                        <span class="small">minimum 6 caractères</span>
+                        <label for="password" class="d-block mb-0 mt-2">Mot de passe&nbsp;:<span class="font-weight-bold ml-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="password" type="password" id="password" required maxlength="15" minlength="6"/>
+                        <span class="small">entre 6 et 15 caractères</span>
+                    </fieldset>
+                    <p class="text-danger font-italic pl-3 mt-2"><span class="font-weight-bold">*</span>Obligatoire</p>
+                </div>
+                <div class="row justify-content-center mt-5">
+                    <button  id="signup-user" class="btn btn-primary px-5 py-3 text-uppercase font-weight-bold w-auto" type="submit" form="signup" name="Créer un compte" value="Créer un compte">Créer un compte</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="container-fluid bg-primary mt-auto p-4">
+    <div class="row">
+        <nav class="col navbar navbar-expand-sm navbar-dark justify-content-center" aria-label="footer">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        A propos
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        Charte du forum
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        Cgu
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="mailto:moderateur@groupomania.com">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

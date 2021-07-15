@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bienvenue sur votre forum Groupomania !</title>
+    <meta name="description" content="Partagez et commentez des articles et des gifs entre collègues">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.jpg">
+    <script type="module" src="js/post.js" async></script>
+</head>
+<body class="d-flex flex-column">
+<header id="top" class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col text-center">
+            <a class=" navbar-brand" href="index.html">
+                <img src="img/logo-Groupomania.svg" class="mw-100 h-auto mt-2" alt="Logo Groupomania" title="Logo Groupomania" width="510" height="95"/>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <!-- main menu -->
+        <nav class="col-8 navbar navbar-expand-md navbar-light bg-white mt-4 py-0" aria-label="main">
+            <button class="navbar-toggler border-0 pb-2 pt-0" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="posts.html">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            A propos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:moderateur@groupomania.com">
+                            Signaler un abus
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Charte du forum
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Cgu
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- user menu -->
+        <nav class="col-4 navbar navbar-light bg-white mt-4 justify-content-end py-0 align-items-start" aria-label="user">
+            <ul class="navbar-nav navbar-expand flex-row">
+                <li class="nav-item mx-2">
+                    <a class="nav-link pt-0 d-flex flex-column align-items-center" href="profile.html">
+                        <svg class="bi" width="32" height="32" fill="currentColor">
+                            <use xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#person"/>
+                        </svg>
+                        Mon Profil
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link pt-0 position-relative d-flex flex-column align-items-center" href="post-form.html">
+                        <svg class="bi p-1" width="32" height="32" fill="currentColor">
+                            <use xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#journal-plus"/>
+                        </svg>
+                        Publier
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a id="logout" class="nav-link pt-0 position-relative d-flex flex-column align-items-center" href="index.html">
+                        <svg class="bi p-1" width="32" height="32" fill="currentColor">
+                            <use xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#box-arrow-right"/>
+                        </svg>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="container-xl pt-5">
+        <div class="row justify-content-center">
+            <div class="d-flex flex-row justify-content-between mt-5">
+                <a id="modify-post" href=""><button id="modify-button" class="btn btn-primary px-5 py-3 text-uppercase font-weight-bold w-auto d-block mx-auto" type="button" name="Modifier" value="Modifier">Modifier</button></a>
+                <button  id="delete-post" class="btn btn-danger px-5 py-3 text-uppercase font-weight-bold w-auto mb-5" type="button" name="Supprimer" value="Supprimer">Supprimer</button>
+            </div>
+            <article id="article"></article>
+            <div class="dropdown-divider border-secondary mt-5"></div>
+            <h2 class="text-center mt-5">Commentaires</h2>
+            <form name="comment" id="comment" method="post" class="d-flex flex-column align-items-center">
+                <label for="content" class="d-block mb-0 mt-5 align-self-start">Laisser un commentaire&nbsp;:</label>
+                <textarea class="form-control pr-5 mb-2" name="content" id="content" rows="5" cols="80" minlength="3" maxlength="400" required ></textarea>
+                <button  id="publish-comment" class="btn btn-primary px-5 py-3 font-weight-bold w-auto mb-5" type="submit" form="comment" name="Valider" value="Valider">Valider</button>
+            </form>
+            <div id="comments" class="my-5"></div>
+        </div>
+    </section>
+</main>
+
+<footer class="container-fluid bg-primary mt-auto p-4">
+    <div class="row">
+        <nav class="col navbar navbar-expand-sm navbar-dark justify-content-center" aria-label="footer">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        A propos
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        Charte du forum
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        Cgu
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="mailto:moderateur@groupomania.com">
+                        Signaler un abus
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

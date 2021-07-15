@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Publier un article</title>
+    <meta name="description" content="Publiez un article sur le forum">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.jpg">
+    <script type="module" src="js/post-form.js" async></script>
+</head>
+<body class="d-flex flex-column">
+<header id="top" class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col text-center">
+            <a class=" navbar-brand" href="index.html">
+                <img src="img/logo-Groupomania.svg" class="mw-100 h-auto mt-2" alt="Logo Groupomania" title="Logo Groupomania" width="510" height="95"/>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <!-- main menu -->
+        <nav class="col-8 navbar navbar-expand-md navbar-light bg-white mt-4 py-0" aria-label="main">
+            <button class="navbar-toggler border-0 pb-2 pt-0" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="posts.html">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            A propos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:moderateur@groupomania.com">
+                            Signaler un abus
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Charte du forum
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Cgu
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- user menu -->
+        <nav class="col-4 navbar navbar-light bg-white mt-4 justify-content-end py-0 align-items-start" aria-label="user">
+            <ul class="navbar-nav navbar-expand flex-row">
+                <li class="nav-item mx-2">
+                    <a class="nav-link pt-0 d-flex flex-column align-items-center" href="profile.html">
+                        <svg class="bi" width="32" height="32" fill="currentColor">
+                            <use xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#person"/>
+                        </svg>
+                        Mon Profil
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link pt-0 position-relative d-flex flex-column align-items-center" href="post-form.html">
+                        <svg class="bi p-1" width="32" height="32" fill="currentColor">
+                            <use xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#journal-plus"/>
+                        </svg>
+                        Publier
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a id="logout" class="nav-link pt-0 position-relative d-flex flex-column align-items-center" href="index.html">
+                        <svg class="bi p-1" width="32" height="32" fill="currentColor">
+                            <use xlink:href="../node_modules/bootstrap-icons/bootstrap-icons.svg#box-arrow-right"/>
+                        </svg>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="container-xl pt-5">
+        <div class="row justify-content-center">
+            <h1 class="text-center mt-5">Publier un article</h1>
+            <form name="publish" id="publish" method="post" class="my-5 d-flex flex-column align-items-center" enctype="multipart/form-data">
+                    <fieldset id="post" class="form-group col-sm-8">
+                        <label for="image" class="d-block mb-0">Sélectionner une image (png, jpg, jpeg)&nbsp;:<span class="font-weight-bold ml-1 text-danger mx-1">*</span></label>
+                        <input class="form-control pr-5" name="image" type="file" id="image" accept=".jpg, .jpeg, .png" required />
+                        <label for="caption" class="d-block mb-0 mt-2">Légende de l'image&nbsp;:<span class="font-weight-bold mx-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="caption" type="text" id="caption" minlength="3" maxlength="80" spellcheck="true" required/>
+                        <div id="preview" class="w-100 my-3"></div>
+                        <label for="title" class="d-block mb-0 mt-5">Titre de l'article&nbsp;:<span class="font-weight-bold mx-1 text-danger">*</span></label>
+                        <input class="form-control pr-5" name="title" type="text" id="title" minlength="3" maxlength="150" spellcheck="true" required/>
+                    </fieldset>
+
+                    <fieldset id="article" class="form-group col-sm-8">
+                        <label for="content" class="d-block mb-0 mt-5">Rédiger l'article&nbsp;:<span class="font-weight-bold ml-1 text-danger mx-1">*</span></label>
+                        <textarea class="form-control p-3" name="content" id="content" rows="50" cols="100" minlength="7" maxlength="12000" spellcheck="true" required ></textarea>
+                    </fieldset>
+                    <p class="text-danger font-italic pl-3 mt-2"><span class="font-weight-bold">*</span>Obligatoire</p>
+                <div class="justify-content-center mt-5">
+                    <button  id="publish-post" class="btn btn-primary px-5 py-3 text-uppercase font-weight-bold w-auto d-block mx-auto mb-5" type="submit" form="publish" name="Publier" value="Publier">Publier</button>
+                    <button  id="modify-post" class="btn btn-primary px-5 py-3 text-uppercase font-weight-bold w-auto d-block mx-auto mb-5 d-none" type="button" name="Modifier l'article" value="Modifier l'article" disabled>Modifier l'article</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="container-fluid bg-primary mt-auto p-4">
+    <div class="row">
+        <nav class="col navbar navbar-expand-sm navbar-dark justify-content-center" aria-label="footer">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        A propos
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        Charte du forum
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#">
+                        Cgu
+                    </a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="mailto:moderateur@groupomania.com">
+                        Signaler un abus
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
